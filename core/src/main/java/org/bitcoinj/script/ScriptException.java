@@ -23,6 +23,15 @@ public class ScriptException extends VerificationException {
 
     private final ScriptError err;
 
+    /**
+     * err is set to SCRIPT_ERR_BAD_OPCODE
+     * @param msg
+     */
+    public ScriptException(String msg) {
+        super(msg);
+        this.err = ScriptError.SCRIPT_ERR_BAD_OPCODE;
+    }
+    
     public ScriptException(ScriptError err, String msg) {
         super(msg);
         this.err = err;
